@@ -32,7 +32,7 @@ public class MyView extends View {
 
         mPaint.setColor(Color.RED);
         mPaint.setStyle(Paint.Style.STROKE);
-//        mPaint.setStrokeWidth(20);
+        mPaint.setStrokeWidth(20);
         canvas.drawCircle(220, 400, 100, mPaint);
 
         mPaint.setStyle(Paint.Style.FILL);
