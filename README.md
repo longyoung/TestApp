@@ -1,2 +1,2 @@
-# testApp
+# TestApp
 个人测试项目，用于保存测试代码，还可练习git操作
