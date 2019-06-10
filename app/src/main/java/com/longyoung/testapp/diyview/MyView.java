@@ -14,7 +14,7 @@ import android.view.View;
 
 public class MyView extends View {
 
-    private Paint mPaint = new Paint();
+    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public MyView(Context context) {
         super(context);
@@ -28,10 +28,20 @@ public class MyView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        mPaint.setColor(Color.RED);
-        canvas.drawCircle(300, 300, 200, mPaint);
-
         canvas.drawColor(Color.parseColor("#88880000"));
+
+        mPaint.setColor(Color.RED);
+        mPaint.setStyle(Paint.Style.STROKE);
+//        mPaint.setStrokeWidth(20);
+        canvas.drawCircle(220, 400, 100, mPaint);
+
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(100, 100, 200, 200, mPaint);
+
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(220, 100, 320, 200, mPaint);
+
+
     }
 
 }
