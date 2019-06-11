@@ -77,11 +77,48 @@ public class MyView extends View {
 
         Path path = new Path(); // 初始化 Path 对象
 
-        // 使用 path 对图形进行描述（这段描述代码不必看懂）
-        path.addArc(200, 200, 400, 400, -225, 225);
-        path.arcTo(400, 200, 600, 400, -180, 225, false);
-        path.lineTo(400, 542);
-        canvas.drawPath(path, mPaint); // 绘制出 path 描述的图形（心形），大功告成
+//        // 使用 path 对图形进行描述（这段描述代码不必看懂）
+//        path.addArc(200, 200, 400, 400, -225, 225);
+//        path.arcTo(400, 200, 600, 400, -180, 225, false);
+//        path.lineTo(400, 542);
+//        canvas.drawPath(path, mPaint); // 绘制出 path 描述的图形（心形），大功告成
+
+//        path.addCircle(150, 150, 50, Path.Direction.CW);
+//        path.addRect(150, 150, 250, 250, Path.Direction.CW);
+//        Path path2 = new Path();
+//        path2.addOval(500, 500, 550, 550, Path.Direction.CW);
+//        path.addPath(path2);
+
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        path.lineTo(100, 100); // 由当前位置 (0, 0) 向 (100, 100) 画一条直线
+//        path.rLineTo(100, 0); // 由当前位置 (100, 100) 向正右方 100 像素的位置画一条直线
+
+
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        path.lineTo(100, 100); // 画斜线
+//        path.moveTo(200, 100); // 我移~~
+//        path.lineTo(200, 0); // 画竖线
+
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        path.lineTo(100, 100);
+//        path.arcTo(100, 100, 300, 300, -90, 90, true); // 强制移动到弧形起点（无痕迹）
+
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        path.lineTo(100, 100);
+//        path.arcTo(100, 100, 300, 300, -90, 90, false); // 强制移动到弧形起点（无痕迹）
+
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        path.moveTo(100, 100);
+//        path.lineTo(200, 100);
+//        path.lineTo(150, 150);
+//        path.close(); // 使用 close() 封闭子图形。等价于 path.lineTo(100, 100)
+
+        mPaint.setStyle(Paint.Style.FILL);
+        path.moveTo(100, 100);
+        path.lineTo(200, 100);
+        path.lineTo(150, 150);
+
+        canvas.drawPath(path, mPaint);
 
 
     }
