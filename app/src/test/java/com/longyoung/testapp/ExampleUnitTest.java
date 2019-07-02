@@ -21,17 +21,70 @@ public class ExampleUnitTest {
     public void test(){
         System.out.println("abc");
 
-        int in = 21658;
+        addMul(398130, -1);
 
-        String inStr = String.valueOf(in);
-        int len = inStr.length();
-        int[] ary = new int[len];
+    }
+
+    private void addMul(int in, int zeng){
+        int lianXvNineCount = 0;
+        boolean isLian = true;
+
+        in += zeng;
+        String tempStr = String.valueOf(in);
+        int len = tempStr.length();
         for (int i=0; i<len; i++){
-            ary[i] = Integer.valueOf(inStr.substring(len - 1 - i, len - i));
-            System.out.println("a=" + ary[i]);
+            if (zeng > 0){
+                if (Integer.valueOf(tempStr.substring(len - 1 - i, len - i)) == 0 && isLian){
+                    lianXvNineCount++;
+                } else {
+                    isLian = false;
+                }
+            } else {
+                if (Integer.valueOf(tempStr.substring(len - 1 - i, len - i)) == 9 && isLian){
+                    lianXvNineCount++;
+                } else {
+                    isLian = false;
+                }
+            }
         }
 
+        System.out.println("lian=" + lianXvNineCount);
 
+        tempStr = tempStr.substring(len - 1 - lianXvNineCount, len);
+
+        System.out.println("inStr=" + tempStr);
+
+    }
+
+    private void addMul2(int in, int zeng){
+        int lianXvNineCount = 0;
+        boolean isLian = true;
+
+        String tempStr = String.valueOf(in);
+        int len = tempStr.length();
+        for (int i=0; i<len; i++){
+            if (Integer.valueOf(tempStr.substring(len - 1 - i, len - i)) == 9 && isLian){
+                lianXvNineCount++;
+            } else {
+                isLian = false;
+            }
+        }
+
+        System.out.println("lian=" + lianXvNineCount);
+
+        if (len > lianXvNineCount){//位数一样
+            in += zeng;
+            tempStr = String.valueOf(in);
+            tempStr = tempStr.substring(len - 1 - lianXvNineCount, len);
+        } else {//位数加1
+            len++;
+
+            in += zeng;
+            tempStr = String.valueOf(in);
+            tempStr = tempStr.substring(len - 1 - lianXvNineCount, len);
+        }
+
+        System.out.println("inStr=" + tempStr);
     }
 
 }
