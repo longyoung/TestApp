@@ -104,7 +104,7 @@ public class ZanView extends View {
                 mZanCountTemp = addMul(mZanCount, 1);
                 mYText = 80;
             } else {
-                mZanCountTemp = addMul(mZanCount, -1);
+                mZanCountTemp = addMul(mZanCount, -0);
                 mYText = 0;
             }
 
