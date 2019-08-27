@@ -44,6 +44,8 @@ public class ZanView extends View {
             }
 
             invalidate();//重绘
+            postInvalidate();
+
         }
     };
 

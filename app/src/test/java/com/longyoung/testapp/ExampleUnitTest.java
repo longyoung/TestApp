@@ -2,6 +2,9 @@ package com.longyoung.testapp;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 /**
@@ -19,7 +22,37 @@ public class ExampleUnitTest {
     public void test(){
         System.out.println("abc");
 
-        addMul(398100, -1);
+//        addMul(398100, -1);
+
+        int nums[] = {3,2,3};
+        int target = 6;
+
+//        int[] result = new int[2];
+//        int temp1 = 0;
+//        int temp2 = 0;
+//        for (int j=0; j<nums.length; j++){
+//            temp1 = nums[j];
+//            for(int k=0; k<j; k++){
+//                temp2 = nums[k];
+//                if (temp1 + temp2 == target){
+//                    result[0] = k;
+//                    result[1] = j;
+//                    System.out.println("abc=" + result[0] + result[1]);
+//                    return;
+//                }
+//
+//            }
+//        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i=0;i<nums.length; i++){
+            int com = target - nums[i];
+            if (map.containsKey(com)){
+                System.out.println("aa=" + map.get(nums[i]) + i);
+                return;
+            }
+            map.put(nums[i], i);
+        }
 
     }
 
